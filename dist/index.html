@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>BUG6792</title>
+    <meta
+      name="viewport"
+      content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <meta name="theme-color" content="#31d53d" />
+  </head>
+  <body style="padding-left:20px; padding-right: 20px">
+    <br/><br/>
+    <h1>Bug 8076</h1>
+    <p>Android Capacitor: http post supplied with a number as a data value is sent as it's string representation</p>
+
+    <p>iOS Capacitor: http post supplied with a number as a data value is sent as an empty string</p>
+    <br />
+    <br/>
+    <button onclick="postnumber()">Test</button>&nbsp;&nbsp;<strong>Post number in data</strong>
+    <br />
+    <br />
+    <div id="postnumberdata"></div>
+    <!--
+    <h1>Bug 6792</h1>
+    <h3>Android Capacitor.Http.post with Content-Type application/x-www-form-urlencoded does not send the data properly encoded</h3>
+   <button onclick="capacitorpostdata()">Test</button>&nbsp;&nbsp;<strong>Post Data via CapacitorHttp</strong>
+    <br/>
+    <br/>
+    This does not work because the data object is sent as an object with key the stringfied data and empty value. If the fix has been applied the output will show the data passed successfully via the POST request.
+    <br/>
+    <div id="capacitorpostdata"></div>
+    <br/>
+    <br/>
+    <button onclick="ajaxpostdata()">Test</button>&nbsp;&nbsp;<strong>Post Data via jquery ajax</strong>
+    <br/>
+    <br/>
+    This works because jQuery properly encodes the data object.
+    <br/>
+    <div id="ajaxpostdata"></div>
+    <br/>
+    <button onclick="capacitorpostdatastring()">Test</button>&nbsp;&nbsp;<strong>Post Data string via CapacitorHttp</strong>
+    <br/>
+    <br/>
+    This works because the data object is provided to Capacitor already properly encoded.
+    <br/>
+    <div id="capacitorpostdatastring"></div>
+    <br/>
+    <h1>Bug 6856</h1> 
+    <h3>Android CapacitorCookies.getCookies ignores url parameter</h3>
+    <button onclick="capacitorurlcookies()">Test</button>&nbsp;&nbsp;<strong>Retrieve cookies set by specific url</strong>
+     <br/>
+     <br/>
+     If this is running Capacitor 5.2.3 or higher, this does not work because getCookies returns ALL cookies set by any url domain that are not HTTP Only. Up to Capacitor 5.2.2, this works, but also returns cookies that are HTTP Only.<br/><br/>
+     If the fix has been applied getting the cookies for each url will return only the cookies for each domain.
+     <br/>
+     <div id="capacitorurlcookies"></div>
+     <br/>
+    <br/>
+    <br/>
+     <h1>Bug 6821</h1>
+     <h3>Check expiry date for cookies set by Bug 6856</h3>
+     <button onclick="getcookieexpiry()">Test</button>&nbsp;&nbsp;<strong>Retrieve cookie expiry date</strong>
+      <br/>
+      <br/>
+      For iOS, the cookies set by the bug 6856 test have the correct expiry date in spite of the fault in HttpRequestHandler.swift that separates the cookie information inside the expiry date.
+      <br/>
+      <br/>
+      <div id="getcookieexpiry"></div>
+      <br/>
+      <br/>
+      <h1>Bug 6860</h1>
+      <h3>Setting cookie programmatically does not update document.cookie</h3>
+      <button onclick="setonrcookie()">Test</button>&nbsp;&nbsp;<strong>Set cookie programmatically</strong>
+       <br/>
+       <br/>
+       <div id="setonrcookie"></div>
+       <br/>
+       <br/>
+       <h3>Deleting cookie programmatically does not update document.cookie</h3>
+       <button onclick="deleteonrcookie()">Test</button>&nbsp;&nbsp;<strong>Delete cookie programmatically</strong>
+        <br/>
+        <br/>
+        <div id="deleteonrcookie"></div>
+       <br/>
+       <br/>
+       <h1>Bug 6882</h1>
+       <h3>For Android, receiving a cookie with domain set results in document.cookie not being updated</h3>
+       <button onclick="setwithdomain()">Test</button>&nbsp;&nbsp;<strong>Set cookie programmatically</strong>
+        <br/>
+        <br/>
+        <div id="setwithdomain"></div>
+        <br/>
+        <br/>
+        <h1>Bug 6885</h1>
+        <h3>For iOS, receiving a cookie with HttpOnly is added to document.cookie </h3>
+        <button onclick="sethttponly()">Test</button>&nbsp;&nbsp;<strong>Set cookie with HttpOnly set</strong>
+         <br/>
+         <br/>
+         <div id="sethttponly"></div>
+        <br/>
+        <br/>
+  -->
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script src="./js/bug6792.js"></script>
+  </body>
+</html>
